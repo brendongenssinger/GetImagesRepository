@@ -1,0 +1,16 @@
+﻿@model CreateDirectory.Models.Clientes
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<input type="file" value="Upload de imagem" multiple name="photos[]"accept="image/jpg"/>
+    <button type="submit">Carregar Imagem</button>
+}
+
+@foreach (var item in Model.NameImagens)
+{
+    <img src="@item"/>
+}
